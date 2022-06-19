@@ -1,0 +1,84 @@
+<template>
+  <div>
+    <div id="wrapper">
+      <Navigation />
+      <router-view />
+    </div>    
+    <Footer />
+  </div>
+</template>
+
+<script>
+import Navigation from "@/components/Navigation.vue"
+import Footer from "@/components/Footer.vue"
+
+export default {
+  name: "App",
+  components: {
+      Navigation,
+      Footer,
+  },
+};
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,500;0,700;1,200;1,500;1,700&display=swap');
+
+
+body {
+  margin: 0;
+}
+
+#wrapper {
+  min-height: calc(100vh - 75px);
+  position: relative;
+  margin-bottom: 40px;
+}
+
+#app {
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#main {
+  padding-bottom: 40px;
+  padding: 10px;
+}
+
+a {
+  color: #DD3333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  background-color: #222222;
+  border: 0;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 15px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #DD3333;
+  transition-duration: 0.2s;
+}
+
+.x-overflow {
+  overflow-x: auto;
+}
+
+.fakeLink {
+  cursor: pointer;
+}
+
+</style>
