@@ -76,7 +76,7 @@ export default {
 
     updateClothes:
         function() {
-            this.weatherApproClothes = []
+            // this.weatherApproClothes = []
             this.$apollo.queries.weatherApproClothes.refetch();
             // console.log("Clothes updated")
         },
