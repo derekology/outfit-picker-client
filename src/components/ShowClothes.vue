@@ -27,7 +27,7 @@
                 <td>{{ clothing.colour }}</td>
                 <td>{{ clothing.weight }}</td>
                 <td><span v-on:click="washClothing(clothing.id, !clothing.wash)"><input type="checkbox" :checked="clothing.wash"></span></td>
-                <td class="delete" width="20"><span v-on:click="deleteClothing(clothing.id)" v-show="hoverId === clothing.id"><svg xmlns="http://www.w3.org/2000/svg" fill="#FF0000" width="12" height="12" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z" /> "></svg></span></td>
+                <td class="delete" width="20"><span v-on:click="deleteClothing(clothing.id)" v-show="hoverId === clothing.id && this.uid != 'demo'"><svg xmlns="http://www.w3.org/2000/svg" fill="#FF0000" width="12" height="12" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z" /> "></svg></span></td>
               </tr>
             </tbody>
           </table>
