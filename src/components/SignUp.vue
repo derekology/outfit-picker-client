@@ -2,7 +2,7 @@
   <div class="signup">
     <span id="signup">
       <h3>Sign Up</h3>
-      <form>
+      <div>
       <input type="text" v-model="email" placeholder="Email" />
       <br /><br />
       <input type="password" v-model="password" placeholder="Password" />
@@ -10,7 +10,7 @@
       <input type="password" v-model="confirmPass" placeholder="Confirm Password" />
       <br /><br />
       <button @click="signUp">Sign Up</button>
-      </form>
+      </div>
       <br /><br />
     </span>
   </div>

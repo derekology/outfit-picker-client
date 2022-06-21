@@ -1,13 +1,13 @@
 <template>
   <div class="signin">
     <h3>Sign in</h3>
-    <form>
+    <div>
       <input type="text" v-model="email" placeholder="Email" />
       <br /><br />
       <input type="password" v-model="password" placeholder="Password" />
       <br /><br />
       <button @click="login">Sign In</button>
-    </form>
+    </div>
     <br /><br />
   </div>
 </template>
