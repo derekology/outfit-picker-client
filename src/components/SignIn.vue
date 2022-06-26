@@ -8,7 +8,7 @@
       <br /><br />
       <button @click="login">Sign In</button>
       <br /><br />
-      <p>or Sign In with:
+      <p>or Sign in with:
       <br />
       <button @click="googlelogin" class="social-login-button">
         <img alt="Google logo" src="../assets/google-logo.png">
