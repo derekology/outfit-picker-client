@@ -82,8 +82,8 @@
       <div style="text-align: center; width: 200px; margin: 0 auto">
         <button
           id="btnSave"
-          @click="createClothing(this.userId, type, article, colour, weight)"
-          v-show="showSubmit"
+          :style="[ this.showSubmit ? { backgroundColor: '#222222' } : { backgroundColor: '#adadad' }]"
+          @click="saveNewClothing()"
         >
           <!-- <button id="btnSave" @click="createClothing(this.userId, type, article, colour, weight)"> -->
           Save
@@ -140,6 +140,7 @@ export default {
         this.showSubmit = false;
       }
     },
+
     createClothing(userId, type, article, colour, weight) {
       this.$apollo.mutate({
         mutation: CREATE_CLOTHING,
@@ -155,6 +156,12 @@ export default {
       });
       this.$apollo.queries.allClothes.refetch();
       this.clean();
+    },
+
+    saveNewClothing() {
+      if ( this.showSubmit ) {
+        this.createClothing(this.userId, this.type, this.article, this.colour, this.weight);
+      }
     },
 
     clean() {
