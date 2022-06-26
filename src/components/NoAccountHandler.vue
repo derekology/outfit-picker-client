@@ -61,12 +61,12 @@ export default {
 
       signInWithPopup(auth, provider).then(
         function () {
-          alert("Well done! You are now logged in.");
+          // alert("Well done! You are now logged in.");
           // this.$router.replace('closet')
         },
         function (err) {
           if ( err.code != "auth/popup-closed-by-user" && err.code != "auth/cancelled-popup-request" ) {
-            alert("Oops. " + err.code);
+            alert("Oops. " + err.message);
           }
         }
       );      
@@ -78,12 +78,12 @@ export default {
 
       signInWithPopup(auth, provider).then(
         function () {
-          alert("Well done! You are now logged in.");
+          // alert("Well done! You are now logged in.");
           // this.$router.replace('closet')
         },
         function (err) {
           if ( err.code != "auth/popup-closed-by-user" && err.code != "auth/cancelled-popup-request" ) {
-            alert("Oops. " + err.code);
+            alert("Oops. " + err.message);
           }
         }
       );      

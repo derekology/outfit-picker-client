@@ -29,7 +29,7 @@ export default {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password).then(
         function () {
-          alert("Well done! You are now logged in.");
+          // alert("Well done! You are now logged in.");
           // this.$router.replace('home')
         },
         function (err) {
