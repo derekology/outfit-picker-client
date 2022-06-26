@@ -1,8 +1,7 @@
 <template>
   <div>
     <h3>Sign in</h3>
-    <p>
-    <br />
+    <div>
     <button v-on:click="emaillogin" class="login-button">
       <img alt="Email login" src="../assets/email-login.png">
     </button>
@@ -12,7 +11,7 @@
     <button @click="facebooklogin" class="login-button">
       <img alt="Facebook logo" src="../assets/facebook-logo.png">
     </button>
-    </p>
+    </div>
     <div v-if="emailloginshow">
     <span v-if="!signup">
         <SignIn />
@@ -109,7 +108,7 @@ export default {
     transition-duration: 0.3s;
   }
   .login-button {
-    margin: 0px 15px 10px 15px;
+    margin: 0px 10px 15px 10px;
     background: rgb(255,255,255,0%);
     padding: 0px;
   }
