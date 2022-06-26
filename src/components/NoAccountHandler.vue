@@ -2,13 +2,13 @@
   <div>
     <h3>Sign in</h3>
     <div>
-    <button v-on:click="emaillogin" class="login-button">
+    <button v-on:click="emaillogin()" class="login-button">
       <img alt="Email login" src="../assets/email-login.png">
     </button>
-    <button @click="googlelogin" class="login-button">
+    <button @click="googlelogin()" class="login-button">
       <img alt="Google logo" src="../assets/google-logo.png">
     </button>
-    <button @click="facebooklogin" class="login-button">
+    <button @click="facebooklogin()" class="login-button">
       <img alt="Facebook logo" src="../assets/facebook-logo.png">
     </button>
     </div>
@@ -102,6 +102,7 @@ export default {
   .login-button img {
     width: 32px;
     padding: 10px;
+    border: solid 2px #eaeaea;
   }
   .login-button img:hover {
     background: #eaeaea;
