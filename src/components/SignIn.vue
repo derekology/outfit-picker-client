@@ -57,7 +57,9 @@ export default {
           // this.$router.replace('closet')
         },
         function (err) {
-          alert("Oops. " + err.message);
+          if ( err.code != "auth/popup-closed-by-user" && err.code != "auth/cancelled-popup-request" ) {
+            alert("Oops. " + err.code);
+          }
         }
       );      
       this.$router.replace("closet");
@@ -72,7 +74,9 @@ export default {
           // this.$router.replace('closet')
         },
         function (err) {
-          alert("Oops. " + err.message);
+          if ( err.code != "auth/popup-closed-by-user" && err.code != "auth/cancelled-popup-request" ) {
+            alert("Oops. " + err.code);
+          }
         }
       );      
       this.$router.replace("closet");
