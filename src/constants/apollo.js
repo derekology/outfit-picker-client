@@ -4,7 +4,7 @@ import { createApolloProvider } from '@vue/apollo-option';
 
 const apolloClient = new ApolloClient({
   link: createHttpLink({
-    uri: process.env.API_URL,
+    uri: process.env.NEXT_PUBLIC_API_URL,
    }),   
   cache: new InMemoryCache(),
 })
