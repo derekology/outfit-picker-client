@@ -107,7 +107,7 @@ export default {
             query: SHOW_ALL_CLOTHES,
             variables() {
                 return {
-                    userId: this.uid,
+                    userid: this.uid,
                 }
             }
         }

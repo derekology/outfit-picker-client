@@ -179,7 +179,7 @@ export default {
             variables() {
                 return {
                     approWeight: this.approWeight,
-                    userId: this.uid,
+                    userid: this.uid,
                 }
             }
         }

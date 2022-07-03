@@ -85,7 +85,7 @@
           :style="[ this.showSubmit ? { backgroundColor: '#222222' } : { backgroundColor: '#adadad' }]"
           @click="saveNewClothing()"
         >
-          <!-- <button id="btnSave" @click="createClothing(this.userId, type, article, colour, weight)"> -->
+          <!-- <button id="btnSave" @click="createClothing(this.userid, type, article, colour, weight)"> -->
           Save
         </button>
         <!-- <br/><br/><button id="btnCancel" @click="clean()" >Clear</button> -->
@@ -103,7 +103,7 @@ export default {
   data() {
     return {
       id: null,
-      userId: this.$store.state.user.data.uid,
+      userid: this.$store.state.user.data.uid,
       type: "",
       article: "",
       colour: "",
@@ -141,11 +141,11 @@ export default {
       }
     },
 
-    createClothing(userId, type, article, colour, weight) {
+    createClothing(userid, type, article, colour, weight) {
       this.$apollo.mutate({
         mutation: CREATE_CLOTHING,
         variables: {
-          userId: userId,
+          userid: userid,
           type: type,
           article: article,
           colour: colour,
@@ -160,7 +160,7 @@ export default {
 
     saveNewClothing() {
       if ( this.showSubmit ) {
-        this.createClothing(this.userId, this.type, this.article, this.colour, this.weight);
+        this.createClothing(this.userid, this.type, this.article, this.colour, this.weight);
       }
     },
 
@@ -177,7 +177,7 @@ export default {
             query: SHOW_ALL_CLOTHES,
             variables() {
                 return {
-                    userId: this.uid,
+                    userid: this.uid,
                 }
             }
         }
