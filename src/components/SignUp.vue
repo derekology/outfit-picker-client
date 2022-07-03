@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
     <span id="signup">
-      <h3>Sign Up</h3>
+      <h3>Sign up with email</h3>
       <div>
       <input type="text" v-model="email" placeholder="Email" />
       <br /><br />

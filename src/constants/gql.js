@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const SHOW_ALL_CLOTHES = gql`
-  query allClothes ($userId: String!) {
-    allClothes ( userId: $userId ) {
+  query allClothes ($userid: String!) {
+    allClothes ( userid: $userid ) {
       id
       type
       article
@@ -14,7 +14,7 @@ export const SHOW_ALL_CLOTHES = gql`
 
 export const CREATE_CLOTHING = gql`
 mutation createClothing (
-  $userId: String!
+  $userid: String!
   $type: String!
   $article: String!
   $colour: String!
@@ -23,7 +23,7 @@ mutation createClothing (
   $created: String!
 ) {
   createClothing(
-    userId: $userId,
+    userid: $userid,
     type: $type,
     article: $article,
     colour: $colour,
@@ -32,7 +32,7 @@ mutation createClothing (
     created: $created,
   ) {
     id,
-    userId,
+    userid,
     type,
     article,
     colour,
@@ -63,8 +63,8 @@ export const WASH_CLOTHING = gql`
   }`
 
 export const SHOW_WEATHER_CLOTHES = gql`
-  query weatherApproClothes ($approWeight: String! $userId: String!) {
-    weatherApproClothes ( weight: $approWeight, userId: $userId ) {
+  query weatherApproClothes ($approWeight: String! $userid: String!) {
+    weatherApproClothes ( weight: $approWeight, userid: $userid ) {
       id
       type
       article

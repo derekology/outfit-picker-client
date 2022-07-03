@@ -82,10 +82,10 @@
       <div style="text-align: center; width: 200px; margin: 0 auto">
         <button
           id="btnSave"
-          @click="createClothing(this.userId, type, article, colour, weight)"
-          v-show="showSubmit"
+          :style="[ this.showSubmit ? { backgroundColor: '#222222' } : { backgroundColor: '#adadad' }]"
+          @click="saveNewClothing()"
         >
-          <!-- <button id="btnSave" @click="createClothing(this.userId, type, article, colour, weight)"> -->
+          <!-- <button id="btnSave" @click="createClothing(this.userid, type, article, colour, weight)"> -->
           Save
         </button>
         <!-- <br/><br/><button id="btnCancel" @click="clean()" >Clear</button> -->
@@ -103,7 +103,7 @@ export default {
   data() {
     return {
       id: null,
-      userId: this.$store.state.user.data.uid,
+      userid: this.$store.state.user.data.uid,
       type: "",
       article: "",
       colour: "",
@@ -140,11 +140,12 @@ export default {
         this.showSubmit = false;
       }
     },
-    createClothing(userId, type, article, colour, weight) {
+
+    createClothing(userid, type, article, colour, weight) {
       this.$apollo.mutate({
         mutation: CREATE_CLOTHING,
         variables: {
-          userId: userId,
+          userid: userid,
           type: type,
           article: article,
           colour: colour,
@@ -155,6 +156,12 @@ export default {
       });
       this.$apollo.queries.allClothes.refetch();
       this.clean();
+    },
+
+    saveNewClothing() {
+      if ( this.showSubmit ) {
+        this.createClothing(this.userid, this.type, this.article, this.colour, this.weight);
+      }
     },
 
     clean() {
@@ -170,7 +177,7 @@ export default {
             query: SHOW_ALL_CLOTHES,
             variables() {
                 return {
-                    userId: this.uid,
+                    userid: this.uid,
                 }
             }
         }

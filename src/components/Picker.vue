@@ -5,6 +5,7 @@
                 <select class="selectBox" id="weatherLocation"  name="weatherLocation" v-model="weatherLocation" v-on:change="this.checkForecast(this.weatherLocation), this.clearPicks(), button_text='Choose'">
                     <option value="Richmond, CA">Richmond, CA</option>
                     <option value="Hong Kong, HK">Hong Kong, HK</option>
+                    <option value="Toronto, CA">Toronto, CA</option>
                 </select>
             <br/><br/><span class="forecast" v-show="forecastTemp && forecastWeather">{{ forecastTemp }}°C | {{ forecastWeather }}</span>
         </p><br/>
@@ -178,12 +179,13 @@ export default {
             variables() {
                 return {
                     approWeight: this.approWeight,
-                    userId: this.uid,
+                    userid: this.uid,
                 }
             }
         }
     },
 };
+
 </script>
 
 <style scoped>
@@ -198,6 +200,7 @@ export default {
     /* -moz-appearance: none; */
     /* padding: 2px 5px; */
     text-align: center;
+    width: 150px;
 }
 
 .forecast {
