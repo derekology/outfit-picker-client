@@ -1,8 +1,12 @@
 import ApolloClient from "apollo-boost";
 import { createApolloProvider } from '@vue/apollo-option'
 
-export default createApolloProvider({
-  defaultClient: new ApolloClient({
-    uri: process.env.NEXT_PUBLIC_API_URL,
-  })
+const apolloClient = new ApolloClient({
+  uri: "https://outfit-picker-api-testing.herokuapp.com/graphql"
 })
+
+const apolloProvider = createApolloProvider({
+  defaultClient: apolloClient,
+})
+
+export default apolloProvider
