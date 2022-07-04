@@ -103,7 +103,7 @@ export default {
             }
 
             if ( this.weatherLastLocation != this.weatherLocation || this.weatherLastChecked < twoHoursAgo || !this.forecastTemp || !this.forecastWeather ) {
-                var key = '38c3f1a1a79d6de912bc4d35d1fa27af';
+                var key = process.env.VUE_APP_OWM_TOKEN;
                 var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + key
 
                 getWeatherData()
