@@ -81,4 +81,13 @@ button:hover {
   cursor: pointer;
 }
 
+.icon-btn {
+  filter: saturate(0.6) brightness(0.8);
+}
+
+.icon-btn:hover {
+  filter: saturate(1) brightness(1);
+  transition-duration: 0.1s;
+}
+
 </style>
