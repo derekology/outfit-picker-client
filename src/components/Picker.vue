@@ -2,7 +2,7 @@
     <div>
         <p>
             <label class="picklist-label" for="weatherLocation">Forecast for</label><br/>
-                <select class="selectBox" id="weatherLocation"  name="weatherLocation" v-model="weatherLocation" v-on:change="this.checkForecast(this.weatherLocation), this.clearPicks(), button_text='Choose'">
+                <select class="selectBox" id="weatherLocation"  name="weatherLocation" :style="{ width: weatherLocation.length+3 + 'ch' }" v-model="weatherLocation" v-on:change="this.checkForecast(this.weatherLocation), this.clearPicks(), button_text='Choose'">
                     <option value="Richmond, CA">Richmond, CA</option>
                     <option value="Hong Kong, HK">Hong Kong, HK</option>
                     <option value="Toronto, CA">Toronto, CA</option>
@@ -200,7 +200,7 @@ export default {
     /* -moz-appearance: none; */
     /* padding: 2px 5px; */
     text-align: center;
-    width: 150px;
+    /* width: 150px; */
 }
 
 .forecast {
