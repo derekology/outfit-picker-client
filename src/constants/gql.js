@@ -4,6 +4,7 @@ export const SHOW_ALL_CLOTHES = gql`
   query allClothes ($userid: String!) {
     allClothes ( userid: $userid ) {
       id
+      userid
       type
       article
       colour
@@ -39,6 +40,32 @@ mutation createClothing (
     weight,
     wash,
     created,
+  }
+}`
+
+export const UPDATE_CLOTHING = gql`
+mutation updateClothing (
+  $id: ID!
+  $type: String!
+  $article: String!
+  $colour: String!
+  $weight: String!
+  $updated: String!
+) {
+  updateClothing(
+    id: $id,
+    type: $type,
+    article: $article,
+    colour: $colour,
+    weight: $weight,
+    updated: $updated,
+  ) {
+    id,
+    type,
+    article,
+    colour,
+    weight,
+    updated,
   }
 }`
 
