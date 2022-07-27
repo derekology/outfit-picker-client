@@ -4,19 +4,19 @@
       <Navigation />
       <router-view />
     </div>
-    <Copyright />
+    <SiteFooter />
   </div>
 </template>
 
 <script>
 import Navigation from "@/components/nav-menu.vue";
-import Copyright from "@/components/site-footer.vue";
+import SiteFooter from "@/components/site-footer.vue";
 
 export default {
   name: "App",
   components: {
     Navigation,
-    Copyright,
+    SiteFooter,
   },
 };
 </script>
