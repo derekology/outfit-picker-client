@@ -3,13 +3,17 @@
     <span id="signup">
       <h3>Sign up with email</h3>
       <div>
-      <input type="text" v-model="email" placeholder="Email" />
-      <br /><br />
-      <input type="password" v-model="password" placeholder="Password" />
-      <br /><br />
-      <input type="password" v-model="confirmPass" placeholder="Confirm Password" />
-      <br /><br />
-      <button @click="signUp">Sign Up</button>
+        <input type="text" v-model="email" placeholder="Email" />
+        <br /><br />
+        <input type="password" v-model="password" placeholder="Password" />
+        <br /><br />
+        <input
+          type="password"
+          v-model="confirmPass"
+          placeholder="Confirm Password"
+        />
+        <br /><br />
+        <button @click="signUp">Sign Up</button>
       </div>
       <br /><br />
     </span>
@@ -31,8 +35,7 @@ export default {
 
   methods: {
     signUp: function () {
-
-      if ( this.password == this.confirmPass && this.password.length > 0 ) {
+      if (this.password == this.confirmPass && this.password.length > 0) {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, this.email, this.password).then(
           function () {
@@ -42,9 +45,8 @@ export default {
             alert("Oops. " + err.message);
           }
         );
-      }
-      else {
-        alert("Error. Check that password is valid and confirmed.")
+      } else {
+        alert("Error. Check that password is valid and confirmed.");
       }
     },
   },

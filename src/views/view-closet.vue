@@ -11,7 +11,9 @@
       <span v-if="!isHidden"
         ><br /><br />
         <span v-if="this.$store.state.user.data"
-          ><AddClothing /><br /><a class="fakeLink" v-on:click="signOut">Logout</a><br
+          ><AddClothing /><br /><a class="fakeLink" v-on:click="signOut"
+            >Logout</a
+          ><br
         /></span>
         <span v-else><NoAccountHandler /></span>
       </span>
@@ -22,13 +24,13 @@
 </template>
 
 <script>
-import ShowClothes from "@/components/ShowClothes.vue";
-import AddClothing from "@/components/AddClothing.vue";
-import NoAccountHandler from "@/components/NoAccountHandler.vue";
+import ShowClothes from "@/components/show-clothes.vue";
+import AddClothing from "@/components/add-clothing.vue";
+import NoAccountHandler from "@/components/no-account-handler.vue";
 import { getAuth, signOut } from "firebase/auth";
 
 export default {
-  name: "Closet",
+  name: "view-closet",
 
   data() {
     return {
@@ -37,15 +39,17 @@ export default {
   },
 
   methods: {
-      signOut: function () {
-            const auth = getAuth();
-            signOut(auth).then(() => {
-                this.$store.state.user.data = null
-                alert("Sign-out successful.")
-            }).catch(() => {
-                alert("An error happened.")
-            });
-      }
+    signOut: function () {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          this.$store.state.user.data = null;
+          alert("Sign-out successful.");
+        })
+        .catch(() => {
+          alert("An error happened.");
+        });
+    },
   },
 
   components: {
@@ -53,7 +57,6 @@ export default {
     ShowClothes,
     NoAccountHandler,
   },
-
 };
 </script>
 

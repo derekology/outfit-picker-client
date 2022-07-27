@@ -82,7 +82,11 @@
       <div style="text-align: center; width: 200px; margin: 0 auto">
         <button
           id="btnSave"
-          :style="[ this.showSubmit ? { backgroundColor: '#222222' } : { backgroundColor: '#adadad' }]"
+          :style="[
+            this.showSubmit
+              ? { backgroundColor: '#222222' }
+              : { backgroundColor: '#adadad' },
+          ]"
           @click="saveNewClothing()"
         >
           <!-- <button id="btnSave" @click="createClothing(this.userid, type, article, colour, weight)"> -->
@@ -96,7 +100,7 @@
 
 <script>
 import { SHOW_ALL_CLOTHES, CREATE_CLOTHING } from "../constants/gql.js";
-import { getAuth, onAuthStateChanged } from '@firebase/auth';
+import { getAuth, onAuthStateChanged } from "@firebase/auth";
 
 export default {
   name: "AddClothing",
@@ -109,29 +113,27 @@ export default {
       colour: "",
       weight: "",
       showSubmit: false,
-      uid: '',
+      uid: "",
     };
   },
 
   created: function () {
-       this.setUid();
+    this.setUid();
   },
 
   methods: {
-      setUid:
-        function() {
-        const auth = getAuth();
+    setUid: function () {
+      const auth = getAuth();
 
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                this.uid = this.$store.state.user.data.uid;
-            }
-            else {
-                this.uid = "demo"
-            }
-            // console.log(this.uid)
-        })
-      },
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          this.uid = this.$store.state.user.data.uid;
+        } else {
+          this.uid = "demo";
+        }
+        // console.log(this.uid)
+      });
+    },
 
     checkSubmit(type, article, colour, weight) {
       if (type != "" && article != "" && colour != "" && weight != "") {
@@ -159,8 +161,14 @@ export default {
     },
 
     saveNewClothing() {
-      if ( this.showSubmit ) {
-        this.createClothing(this.userid, this.type, this.article, this.colour, this.weight);
+      if (this.showSubmit) {
+        this.createClothing(
+          this.userid,
+          this.type,
+          this.article,
+          this.colour,
+          this.weight
+        );
       }
     },
 
@@ -172,16 +180,16 @@ export default {
       this.showSubmit = false;
     },
   },
-    apollo: {
-        allClothes: { 
-            query: SHOW_ALL_CLOTHES,
-            variables() {
-                return {
-                    userid: this.uid,
-                }
-            }
-        }
+  apollo: {
+    allClothes: {
+      query: SHOW_ALL_CLOTHES,
+      variables() {
+        return {
+          userid: this.uid,
+        };
+      },
     },
+  },
 };
 </script>
 

@@ -11,13 +11,13 @@ export default createStore({
   state: {
     user: {
       loggedIn: false,
-      data: null
-    }
+      data: null,
+    },
   },
   getters: {
-    user(state){
-      return state.user
-    }
+    user(state) {
+      return state.user;
+    },
   },
   mutations: {
     SET_LOGGED_IN(state, value) {
@@ -25,22 +25,22 @@ export default createStore({
     },
     SET_USER(state, data) {
       state.user.data = data;
-    }
+    },
   },
   actions: {
     fetchUser({ commit }, user) {
-      commit("SET_LOGGED_IN", user!==null);
+      commit("SET_LOGGED_IN", user !== null);
       if (user) {
         commit("SET_USER", {
           displayName: user.displayName,
           email: user.email,
-          uid: user.uid
+          uid: user.uid,
         });
       } else {
         commit("SET_USER", null);
       }
-    }
-  }
+    },
+  },
 });
 
 // export const countUp = createStore({

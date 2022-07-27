@@ -1,7 +1,10 @@
 <template>
-    <div id="footer">
-        <p>© {{currentYear}} Derek Woo - All Rights Reserved | Outfit Picker is a <a href="https://wooprojects.com/">woo!project</a> to learn Vue.js.</p>
-    </div>
+  <div id="footer">
+    <p>
+      © {{ currentYear }} Derek Woo - All Rights Reserved | Outfit Picker is a
+      <a href="https://wooprojects.com/">woo!project</a> to learn Vue.js.
+    </p>
+  </div>
 </template>
 
 <script>
@@ -10,7 +13,7 @@ export default {
     return {
       currentYear: new Date().getFullYear(), // 2020
     };
-  }
+  },
 };
 </script>
 
@@ -18,7 +21,7 @@ export default {
 #footer {
   bottom: 0;
   height: 30px;
-  background: #FFFFFF;  
+  background: #ffffff;
   padding: 0px 10px 5px 10px;
 }
 

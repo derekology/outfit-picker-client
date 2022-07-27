@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 // import { createRouter, createWebHistory } from "vue-router";
-import OutfitPicker from "../views/OutfitPicker.vue"
-import Closet from "../views/Closet.vue"
+import OutfitPicker from "../views/view-picker.vue";
+import Closet from "../views/view-closet.vue";
 
 const routes = [
   {
     path: "/",
-    name: "OutfitPicker",    
+    name: "OutfitPicker",
     component: OutfitPicker,
   },
   {
@@ -16,7 +16,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "about" */ "../views/view-about.vue"),
   },
   {
     path: "/closet",
